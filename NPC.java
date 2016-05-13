@@ -31,4 +31,7 @@ public class NPC {
    public int getHealth() {
       return health;
    }
+   public int getDamage() {
+      return attackDamage;
+   }
 }

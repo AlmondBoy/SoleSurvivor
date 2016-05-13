@@ -19,11 +19,12 @@ public class Enviro {
       npc = n;
    }
    public String getDescription() {
+      String description;
       if (rads > 0) {
-         String description = "You approach a " + terrain + " area with a " + structure + "it ommits " + rads + "rads.";
+         description = "You approach a " + terrain + " area with a " + structure + "it ommits " + rads + "rads.";
       }
       else {
-         String description = "You approach a " + terrain + " area with a " + structure + ".";
+         description = "You approach a " + terrain + " area with a " + structure + ".";
       }
       return description;
    }

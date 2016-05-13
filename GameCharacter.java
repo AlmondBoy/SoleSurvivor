@@ -5,6 +5,7 @@ public class GameCharacter {
    String gender;
    int health = 100;
    int rads = 0;
+   int damage = 10;
    public GameCharacter() {
       Scanner nameInput = new Scanner(System.in);
       System.out.print("What is your name? ");
@@ -34,7 +35,15 @@ public class GameCharacter {
    public int getRads() {
       return rads;
    }
-   public int addHealth(int h) {
+   public void addHealth(int h) {
       health+= h;
+   }
+   public void addWeapon(int d) {
+      if (d > damage) {
+         damage = d;
+      }
+   }
+   public int getDamage() {
+      return damage;
    }
 }

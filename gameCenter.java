@@ -29,6 +29,6 @@ public class gameCenter {
       Item medkit = new Item("medkit", "heals", 20);
       System.out.println(medkit.getDescription());
       Enviro one = new Enviro("grassy", "hill", 2);
-      //Weapon shotgun = new Weapon("Shotgun", 20);
+      Weapon shotgun = new Weapon("Shotgun", 20);
    }
 }
