@@ -6,6 +6,9 @@ public class GameCharacter {
    int health = 100;
    int rads = 0;
    int damage = 10;
+   int x = 5;
+   int y = 5;
+   String weaponName = "fists";
    public GameCharacter() {
       Scanner nameInput = new Scanner(System.in);
       System.out.print("What is your name? ");
@@ -28,22 +31,31 @@ public class GameCharacter {
    }
    public void addRad(int r) {
       rads += r;
+      System.out.println("You now have " + rads + " rads. Be careful, if you get 50, you'll die of radiation poisoning.");
    }
    public int attack(Weapon w) {
-      return w.getEffect();
+      return w.getDamage();
    }
-   public int getRads() {
+   public int getRad() {
       return rads;
    }
    public void addHealth(int h) {
       health+= h;
    }
-   public void addWeapon(int d) {
-      if (d > damage) {
-         damage = d;
-      }
+   public void addWeapon(Weapon weapon) {
+         damage = weapon.getDamage();
+         weaponName = weapon.getName();
    }
    public int getDamage() {
       return damage;
+   }
+   public int getX() {
+      return x;
+   }
+   public int getY() {
+      return y;
+   }
+   public String getWeaponName() {
+      return weaponName;
    }
 }

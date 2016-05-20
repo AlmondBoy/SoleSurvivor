@@ -3,6 +3,7 @@ public class Enviro {
    String structure;
    int rads;
    NPC npc;
+   Item item;
    public Enviro(String t, String h) {
       terrain = t;
       structure = h;
@@ -18,14 +19,70 @@ public class Enviro {
       rads = r;
       npc = n;
    }
+   public Enviro(String t, String h, NPC n) {
+      terrain = t;
+      structure = h;
+      npc = n;
+   }
    public String getDescription() {
       String description;
-      if (rads > 0) {
-         description = "You approach a " + terrain + " area with a " + structure + "it ommits " + rads + "rads.";
+      if(rads > 0 && npc != null && item != null) {
+         description = "You approach a " + terrain + " area with a " + structure + " it ommits " + rads + " rads. " + npc.getDescription() + " " + item.getDescription();
+      }
+      else if(rads > 0 && npc != null) {
+         description = "You approach a " + terrain + " area with a " + structure + " it ommits " + rads + " rads. " + npc.getDescription();
+      }
+      else if(npc != null && item != null) {
+         description = "You approach a " + terrain + " area with a " + structure + ". " + npc.getDescription() + " " + item.getDescription();
+      }
+      else if (rads > 0 && item != null) {
+         description = "You approach a " + terrain + " area with a " + structure + " it ommits " + rads + " rads. " + item.getDescription();
+      }
+      else if (rads > 0) {
+         description = "You approach a " + terrain + " area with a " + structure + " it ommits " + rads + " rads.";
+      }
+      else if(npc != null) {
+         description = "You approach a " + terrain + " area with a " + structure + ". " + npc.getDescription();
       }
       else {
          description = "You approach a " + terrain + " area with a " + structure + ".";
       }
       return description;
+   }
+   public int getRad() {
+      return rads;
+   }
+   public NPC getNPC() {
+      return npc;
+   }
+   public void addItem(Item i) {
+      item = i;
+   }
+   public Item getItem() {
+      return item;
+   }
+   public boolean hasItem() {
+      if (item == null) {
+         return false;
+      }
+      else {
+         return true;
+      }
+   }
+   public boolean hasRad() {
+      if (rads < 0) {
+         return false;
+      }
+      else {
+         return true;
+      }
+   }
+   public boolean hasNPC() {
+      if (npc == null) {
+         return false;
+      }
+      else {
+         return true;
+      }
    }
 }

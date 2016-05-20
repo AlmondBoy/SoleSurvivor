@@ -22,8 +22,13 @@ public class NPC {
    public void addDescription(String d) {
       description = d;
    }
-   public String getDiscription() {
-      return description;
+   public String getDescription() {
+      if (health > 0) {
+         return description;
+      }
+      else {
+         return "There is a dead person"; 
+      }
    }
    public void takeDamage(int damage) {
       health -= damage;
@@ -33,5 +38,8 @@ public class NPC {
    }
    public int getDamage() {
       return attackDamage;
+   }
+   public String getName() {
+      return name;
    }
 }
