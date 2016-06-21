@@ -31,7 +31,12 @@ public class GameCharacter {
    }
    public void addRad(int r) {
       rads += r;
-      System.out.println("You now have " + rads + " rads. Be careful, if you get 50, you'll die of radiation poisoning.");
+      if (rads < 50) {
+         System.out.println("You now have " + rads + " rads. Be careful, if you get 50, you'll die of radiation poisoning.");
+      }
+      else {
+         System.out.println("You're body has reached it's limit, you're flesh begins to melt. The radiation is too much.");
+      }
    }
    public int attack(Weapon w) {
       return w.getDamage();

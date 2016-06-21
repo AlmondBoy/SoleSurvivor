@@ -6,7 +6,7 @@ public class Weapon {
       damage = d;
    }
    public String getWeaponDescription() {
-      String wD = "You find a " + name + "it does " + damage + "damage.";
+      String wD = "You find a " + name + " it does " + damage + " damage.";
       return wD;
    }
    public int getDamage() {

@@ -4,6 +4,8 @@ public class Enviro {
    int rads;
    NPC npc;
    Item item;
+   Weapon weapon;
+   Story story;
    public Enviro(String t, String h) {
       terrain = t;
       structure = h;
@@ -23,6 +25,12 @@ public class Enviro {
       terrain = t;
       structure = h;
       npc = n;
+   }
+   public void addWeapon(Weapon w) {
+      weapon = w;
+   }
+   public void addStory(Story s) {
+      story = s;
    }
    public String getDescription() {
       String description;
@@ -84,5 +92,27 @@ public class Enviro {
       else {
          return true;
       }
+   }
+   public boolean hasWeapon() {
+      if (weapon == null) {
+         return false;
+      }
+      else {
+         return true;
+      }
+   }
+   public Weapon getWeapon() {
+      return weapon;
+   }
+   public boolean hasStory() {
+      if (story == null) {
+         return false;
+      }
+      else {
+         return true;
+      }
+   }
+   public Story getStory() {
+      return story;
    }
 }

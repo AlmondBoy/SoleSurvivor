@@ -6,6 +6,7 @@ public class NPC {
    int health;
    int attackDamage;
    ArrayList<String> dialogue;
+   String deathPhrase;
    public NPC(String n, int h, int ad) {
       name = n;
       health = h;
@@ -30,6 +31,9 @@ public class NPC {
          return "There is a dead person"; 
       }
    }
+   public void addDeathPhrase(String dP) {
+      deathPhrase = dP;
+   }
    public void takeDamage(int damage) {
       health -= damage;
    }
@@ -41,5 +45,8 @@ public class NPC {
    }
    public String getName() {
       return name;
+   }
+   public String getDeathPhrase() {
+      return deathPhrase;
    }
 }
